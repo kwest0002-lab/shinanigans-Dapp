@@ -2,7 +2,7 @@
 
 ## `deploy.sh`
 
-Builds, optimizes, deploys, initializes, and verifies the full AssetsUp contract
+Builds, optimizes, deploys, initializes, and verifies the full shinanigans-Dapp contract
 suite in one command, then records the resulting contract ids for the backend to
 consume.
 

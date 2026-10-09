@@ -5,7 +5,7 @@
 //! `lower_snake_case`. `asset_id` is always a `#[topic]` so consumers can index
 //! per asset.
 
-use soroban_sdk::{contractevent, Address, Env};
+use soroban_sdk::{contractevent, Address, Env, String};
 
 use crate::{AlertSeverity, AlertType, MaintenanceAlert, MaintenanceRecord, ScheduledMaintenance};
 

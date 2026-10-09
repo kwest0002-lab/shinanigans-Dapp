@@ -41,7 +41,7 @@ export default function DashboardPage() {
   const [isEditing, setIsEditing] = useState(false);
   const [isHydrated, setIsHydrated] = useState(false);
 
-  const storageKey = `assetsup_dashboard_prefs_${user?.id || 'default'}`;
+  const storageKey = `shinanigans_dapp_dashboard_prefs_${user?.id || 'default'}`;
 
   // Hydrate preferences from localStorage
   useEffect(() => {

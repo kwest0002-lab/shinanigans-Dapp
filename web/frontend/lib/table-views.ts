@@ -13,7 +13,7 @@ export interface SavedView {
   createdAt: string;
 }
 
-const STORAGE_KEY_PREFIX = 'assetsup_table_views';
+const STORAGE_KEY_PREFIX = 'shinanigans_dapp_table_views';
 
 function getStorageKey(tableName: string): string {
   return `${STORAGE_KEY_PREFIX}_${tableName}`;

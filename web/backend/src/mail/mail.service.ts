@@ -13,12 +13,12 @@ function renderTemplate(
   context: Record<string, unknown>,
 ): { subject: string; html: string } {
   const layout = (title: string, body: string) =>
-    `<div style="font-family:sans-serif"><h2>${title}</h2>${body}<hr/><small>AssetsUp</small></div>`;
+    `<div style="font-family:sans-serif"><h2>${title}</h2>${body}<hr/><small>shinanigans-Dapp</small></div>`;
 
   switch (template) {
     case 'welcome':
       return {
-        subject: 'Welcome to AssetsUp',
+        subject: 'Welcome to shinanigans-Dapp',
         html: layout('Welcome', `<p>Hi ${context.name ?? 'there'}, your account is ready.</p>`),
       };
     case 'transfer-decision':
@@ -79,7 +79,7 @@ export class MailService {
     }
 
     await this.transporter.sendMail({
-      from: this.config.get<string>('MAIL_FROM') ?? 'no-reply@assetsup.local',
+      from: this.config.get<string>('MAIL_FROM') ?? 'no-reply@shinanigans-dapp.local',
       to,
       subject,
       html,

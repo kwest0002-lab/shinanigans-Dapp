@@ -105,7 +105,7 @@ export default function ScanPage() {
         </div>
 
         <p className="text-center text-xs text-gray-400 mt-6">
-          Powered by AssetsUp
+          Powered by shinanigans-Dapp
         </p>
       </div>
     </div>

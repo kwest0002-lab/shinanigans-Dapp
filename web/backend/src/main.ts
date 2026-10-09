@@ -52,7 +52,7 @@ async function bootstrap() {
   // Swagger Configuration — only in non-production environments
   if (process.env.NODE_ENV !== 'production') {
     const config = new DocumentBuilder()
-      .setTitle('AssetsUp API')
+      .setTitle('shinanigans-Dapp API')
       .setDescription('Asset management platform API documentation')
       .setVersion('1.0')
       .addBearerAuth(

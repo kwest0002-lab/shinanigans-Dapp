@@ -1,8 +1,8 @@
-# AssetsUp
+# shinanigans-Dapp
 
-AssetsUp is an open-source inventory and asset management system built to help organizations register, track, monitor, and manage physical and digital assets across teams, locations, and regions.
+shinanigans-Dapp is an open-source inventory and asset management system built to help organizations register, track, monitor, and manage physical and digital assets across teams, locations, and regions.
 
-The platform is designed for businesses that need visibility and accountability over their assets without relying on fragmented spreadsheets or rigid legacy software. AssetsUp provides a centralized system for asset lifecycle management while remaining flexible enough to adapt to different organizational structures.
+The platform is designed for businesses that need visibility and accountability over their assets without relying on fragmented spreadsheets or rigid legacy software. shinanigans-Dapp provides a centralized system for asset lifecycle management while remaining flexible enough to adapt to different organizational structures.
 
 ---
 
@@ -17,13 +17,13 @@ Common challenges include:
 - Manual updates and inconsistent records
 - Difficulty auditing asset usage and history
 
-AssetsUp addresses these issues by offering a structured, auditable system that tracks assets from registration through retirement.
+shinanigans-Dapp addresses these issues by offering a structured, auditable system that tracks assets from registration through retirement.
 
 ---
 
-## What AssetsUp Provides
+## What shinanigans-Dapp Provides
 
-AssetsUp enables organizations to:
+shinanigans-Dapp enables organizations to:
 
 - Register physical and digital assets
 - Assign assets to departments, users, or locations
@@ -46,40 +46,26 @@ The system is designed to scale from small teams to multi-branch organizations.
 
 ---
 
-## System Design
+## System Architecture
 
-AssetsUp follows a modular architecture:
+The codebase is divided into two primary parts:
 
-- A backend API manages asset records and business logic
-- A web interface provides dashboards and management tools
-- A relational database ensures consistency and traceability
-
-This structure allows new asset types and workflows to be introduced without redesigning the core system.
+1. **`contracts/` (Smart Contracts)**: On-chain asset registry, multisig governance, maintenance history, staking, and escrow built on Stellar/Soroban in Rust.
+2. **`web/` (Web Application)**: Full-stack application comprising:
+   - `web/backend/`: NestJS REST & WebSocket API, PostgreSQL/TypeORM database, and Redis caching.
+   - `web/frontend/`: Next.js web interface with Tailwind CSS, React Query, and Zustand.
 
 ---
 
 ## Technology Stack
 
-### Frontend
+### Contracts (Rust)
+- Stellar / Soroban SDK (v23)
+- Rust (pinned toolchain: 1.96.0)
 
-- Next.js
-- TypeScript
-- Tailwind CSS
-- react query
-- zustand
-- react hook form
-- zod
-- api client
-
-### Backend
-
-- NestJS
-- PostgreSQL
-- TypeORM
-
-### Contract
-
-- Stellar (rust)
+### Web Application (TypeScript)
+- **Frontend**: Next.js 15, TypeScript, Tailwind CSS, React Query, Zustand, React Hook Form, Zod
+- **Backend**: NestJS, PostgreSQL 16, TypeORM, Redis 7, Socket.io, BullMQ
 
 ---
 
@@ -97,16 +83,26 @@ This structure allows new asset types and workflows to be introduced without red
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-org/assetsup.git
-cd assetsup
+git clone https://github.com/your-org/shinanigans-dapp.git
+cd shinanigans-Dapp
 ```
 
 ---
 
-### Backend Setup
+### Smart Contracts Setup (Rust)
 
 ```bash
-cd backend
+cd contracts
+cargo build --all
+cargo test --all
+```
+
+---
+
+### Backend Setup (NestJS)
+
+```bash
+cd web/backend
 npm install
 ```
 
@@ -117,7 +113,7 @@ DATABASE_HOST=localhost
 DATABASE_PORT=5432
 DATABASE_USER=postgres
 DATABASE_PASSWORD=postgres
-DATABASE_NAME=assetsup
+DATABASE_NAME=shinanigans_dapp
 ```
 
 Run database migrations:
@@ -136,10 +132,10 @@ The backend will be available at `http://localhost:3001`.
 
 ---
 
-### Frontend Setup
+### Frontend Setup (Next.js)
 
 ```bash
-cd frontend
+cd web/frontend
 npm install
 npm run dev
 ```
@@ -201,7 +197,7 @@ The fastest way to get the backend running locally with a matching Postgres 16 a
 
 ```bash
 git clone <repo-url>
-cd AssetsUp
+cd shinanigans-Dapp
 docker compose up
 ```
 
@@ -229,7 +225,7 @@ before running `docker compose up`:
 ```bash
 DB_USERNAME=postgres
 DB_PASSWORD=postgrespassword
-DB_NAME=assetsup_dev
+DB_NAME=shinanigans_dapp_dev
 JWT_SECRET=dev-secret-key
 ```
 
@@ -247,5 +243,5 @@ The backend `Dockerfile` is multi-stage. `docker compose up` builds the
 deployment:
 
 ```bash
-docker build --target production -t assetsup-backend ./backend
+docker build --target production -t shinanigans-dapp-backend ./web/backend
 ```

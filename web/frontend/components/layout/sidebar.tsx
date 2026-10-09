@@ -179,7 +179,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
                 />
               </svg>
             </div>
-            <span className="font-semibold text-gray-900 text-sm">AssetsUp</span>
+            <span className="font-semibold text-gray-900 text-sm">shinanigans-Dapp</span>
           </div>
           {/* Close button - visible on mobile; min 44×44 touch target */}
           <button

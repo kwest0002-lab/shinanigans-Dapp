@@ -1,4 +1,4 @@
-const CACHE_NAME = "assetsup-v1";
+const CACHE_NAME = "shinanigans-dapp-v1";
 const APP_SHELL = ["/dashboard", "/assets", "/manifest.json"];
 
 self.addEventListener("install", (event) => {

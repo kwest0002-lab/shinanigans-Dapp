@@ -1,18 +1,21 @@
-# Contributing to AssetsUp
+# Contributing to shinanigans-Dapp
 
 ## Continuous Integration (CI) Pipelines
 
 All pull requests targeting `main` must pass automated CI checks before merging.
 
-### Workflows
+1. **Contracts CI (`.github/workflows/CI.yaml`)**:
+   - Pins Rust 1.96.0 toolchain and wasm32-unknown-unknown target.
+   - Executes `cargo fmt`, `cargo clippy`, `cargo test`, and `cargo build --workspace`.
+   - Compiles all contracts to release WASM and verifies size budgets.
 
-1. **Backend CI (`.github/workflows/backend-ci.yml`)**:
+2. **Backend CI (`.github/workflows/backend-ci.yml`)**:
    - Provisions `postgres:16` and `redis:7` service containers.
-   - Executes `npm run lint`, `npm run test:cov`, and `npm run build`.
+   - Executes `npm run lint`, `npm run test:cov`, and `npm run build` in `web/backend`.
    - Validates that code coverage meets specified thresholds.
 
-2. **Frontend CI (`.github/workflows/frontend-ci.yml`)**:
-   - Executes `npm run lint`, `npm run type-check`, and `npm run build`.
+3. **Frontend CI (`.github/workflows/frontend-ci.yml`)**:
+   - Executes `npm run lint`, `npm run type-check`, and `npm run build` in `web/frontend`.
 
 ### Branch Protection Configuration
 

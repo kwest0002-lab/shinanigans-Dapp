@@ -1,6 +1,6 @@
 # Implementation: Issues #1530–#1533
 
-Overlay these files onto `AssetsUp/contracts/`.
+Overlay these files onto `shinanigans-Dapp/contracts/`.
 
 ## #1532 – Source of truth (contrib vs assetsup)
 - `contracts/SPLIT-PLAN.md` now has an explicit ownership table:

@@ -270,7 +270,7 @@ pub fn accrue_staking_rewards(env: Env, caller: Address, asset_id: u64) {
         let key = DataKey::Stake(asset_id, staker.clone());
         let mut stake: Stake = store
             .get(&key)
-            .unwrap_or_else(|| crate::handle_error(env, crate::Error::StakeNotFound));
+            .unwrap_or_else(|| crate::handle_error(&env, crate::Error::StakeNotFound));
         let share = (weight.saturating_mul(REWARD_POOL)) / total_weight;
         stake.rewards_earned = stake.rewards_earned.saturating_add(share);
         store.set(&key, &stake);

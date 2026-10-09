@@ -35,10 +35,9 @@ export class SorobanService implements OnModuleInit {
           ? 'https://soroban-futurenet.stellar.org'
           : 'https://soroban-mainnet.stellar.org',
     );
-    const contractId = this.configService.get<string>(
-      'ASSETSUP_CONTRACT_ID',
-      '',
-    );
+    const contractId =
+      this.configService.get<string>('SHINANIGANS_DAPP_CONTRACT_ID') ||
+      this.configService.get<string>('ASSETSUP_CONTRACT_ID', '');
     const secretKey = this.configService.get<string>('STELLAR_SECRET_KEY');
 
     this.config = {
@@ -54,7 +53,7 @@ export class SorobanService implements OnModuleInit {
       );
     } else {
       this.logger.warn(
-        'SorobanService disabled — STELLAR_SECRET_KEY or ASSETSUP_CONTRACT_ID not set',
+        'SorobanService disabled — STELLAR_SECRET_KEY or SHINANIGANS_DAPP_CONTRACT_ID not set',
       );
     }
   }

@@ -14,7 +14,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
               />
             </svg>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900">AssetsUp</h1>
+          <h1 className="text-2xl font-bold text-gray-900">shinanigans-Dapp</h1>
           <p className="text-sm text-gray-500 mt-1">Asset & Inventory Management</p>
         </div>
 

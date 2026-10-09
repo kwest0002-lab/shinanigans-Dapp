@@ -1,6 +1,6 @@
 {
-  "name": "AssetsUp",
-  "short_name": "AssetsUp",
+  "name": "shinanigans-Dapp",
+  "short_name": "shinanigans-Dapp",
   "description": "Modern Assets and Inventory Management Platform",
   "start_url": "/dashboard",
   "display": "standalone",

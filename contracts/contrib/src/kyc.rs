@@ -39,7 +39,7 @@ fn require_admin(env: &Env, caller: &Address) {
         .storage()
         .persistent()
         .get(&GlobalDataKey::Admin)
-        .unwrap_or_else(|| crate::handle_error(&env, crate::Error::NotInitialized));
+        .unwrap_or_else(|| crate::handle_error(env, crate::Error::NotInitialized));
     if *caller != admin {
         panic!("Unauthorized");
     }

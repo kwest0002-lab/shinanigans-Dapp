@@ -136,7 +136,7 @@ fn test_retire_asset_already_retired_panic() {
 }
 
 #[test]
-#[should_panic(expected = "Asset not found")]
+#[should_panic(expected = "Error(Contract, #200)")]
 fn test_get_asset_info_not_found_panic() {
     let env = Env::default();
     let (client, _admin) = setup_test(&env);

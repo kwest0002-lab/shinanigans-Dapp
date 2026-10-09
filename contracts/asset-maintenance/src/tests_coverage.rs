@@ -262,7 +262,7 @@ fn maintenance_history_is_empty_for_an_unknown_asset() {
 }
 
 #[test]
-#[should_panic(expected = "provider not registered")]
+#[should_panic(expected = "Error(Contract, #500)")]
 fn a_record_from_an_unregistered_provider_is_rejected() {
     let env = Env::default();
     let ctx = setup(&env);
@@ -755,7 +755,7 @@ fn filing_a_claim_increments_the_claim_count() {
 }
 
 #[test]
-#[should_panic(expected = "no warranty found")]
+#[should_panic(expected = "Error(Contract, #503)")]
 fn claiming_against_a_missing_warranty_is_rejected() {
     let env = Env::default();
     let ctx = setup(&env);
@@ -868,7 +868,7 @@ fn acknowledging_an_out_of_range_alert_index_is_rejected() {
 }
 
 #[test]
-#[should_panic(expected = "no alerts found")]
+#[should_panic(expected = "Error(Contract, #5)")]
 fn acknowledging_an_alert_for_an_asset_without_any_is_rejected() {
     let env = Env::default();
     let ctx = setup(&env);

@@ -203,7 +203,7 @@ impl AssetMaintenanceContract {
             .storage()
             .persistent()
             .get(&DataKey::Admin)
-            .unwrap_or_else(|| handle_error(&env, Error::NotInitialized));
+            .unwrap_or_else(|| handle_error(env, Error::NotInitialized));
         admin.require_auth();
     }
 

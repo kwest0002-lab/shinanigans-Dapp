@@ -55,8 +55,8 @@ describe('Sidebar', () => {
     expect(screen.getByText('Notifications')).toBeInTheDocument();
   });
 
-  it('renders the AssetsUp logo text', () => {
+  it('renders the shinanigans-Dapp logo text', () => {
     render(<Sidebar />);
-    expect(screen.getByText('AssetsUp')).toBeInTheDocument();
+    expect(screen.getByText('shinanigans-Dapp')).toBeInTheDocument();
   });
 });

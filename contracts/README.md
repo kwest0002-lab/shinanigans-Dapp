@@ -1,6 +1,6 @@
-# AssetsUp Soroban Contracts
+# shinanigans-Dapp Soroban Contracts
 
-Stellar/Soroban smart contracts backing the AssetsUp asset-management platform.
+Stellar/Soroban smart contracts backing the shinanigans-Dapp platform.
 The workspace holds five crates covering the asset registry, multisig approval
 of high-value transfers, escrow and KYC, and on-chain maintenance history.
 
